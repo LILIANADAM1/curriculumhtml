@@ -37,8 +37,8 @@
 
     <main>
       <dl>
-        <dt>Formación</dt>
-        <dd>
+        <dt onclick="toggleContent(this)">Formación</dt>
+        <dd class="hidden">
           <h2 class="formacion">F.P. Txurdinaga
             <span>Grado Superior - Administración y Finanzas - 2016-2018</span>
           </h2>
@@ -47,9 +47,9 @@
           <p>Comunicación y atención al cliente</p>
         </dd>
 
-        <dt>Competencias</dt>
-        <dd>
-          <h2>Lingüísticas</h2>
+        <dt onclick="toggleContent(this)">Competencias</dt>
+        <dd class="hidden">
+          <h2>Idiomas</h2>
           <ul>
             <li>Castellano</li>
             <li>Inglés (B1)</li>
@@ -63,8 +63,9 @@
             </li>
         </dd>
 
-        <dt>Experiencia laboral</dt>
-        <dd>
+        <dt onclick="toggleContent(this)">Experiencia laboral</dt>
+        <dd class="hidden">
+       
           <h2>
             Batzoki Zornotza
             <span>Camarera de barra y sala 2023 - Actualmente</span>
@@ -83,15 +84,23 @@
          
         </dd>
 
-        <dt>Hobbies</dt>
-            
-        <dd>Senderismo a la montaña, Jugar a pádel, Viajar y conocer nuevas culturas </dd>
-        <dt>Referencias</dt>
-        <dd>Disponible bajo solicitud</dd>
+        <dt onclick="toggleContent(this)">Hobbies</dt>
+        <dd class="hidden">
+        Senderismo a la montaña, Jugar a pádel, Viajar y conocer nuevas culturas </dd>
+        <dt onclick="toggleContent(this)">Referencias</dt>
+        <dd class="hidden">
+        Disponible bajo solicitud</dd>
+      
       </dl>
     </main>
     <footer>
       <p>&copy; 2025 Liliana Moreno Bermudez. Todos los derechos reservados.</p>
   </footer>
+  <script>
+    function toggleContent(element) {
+      const content = element.nextElementSibling;
+      content.classList.toggle("hidden");
+    }
+  </script>
   </body>
 </html>
