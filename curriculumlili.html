@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>One Page Resume</title>
 
     <link rel="stylesheet" href="./style.css" />
@@ -13,15 +13,12 @@
     <header>
       <div>
         <h1 class="nombre">Liliana Moreno Bermudez</h1>
-
         <p class="bio">
           Teléfono: <span class="tel">673118538</span><br />
-          Email:
-          <a href="mailto:ionburgoa1@gmail.com"
-            >moreno.liliana@outlook.es</a
-          >
         </p>
-
+        <p class="bio3">
+          Email:<a  href="mailto:ionburgoa1@gmail.com">moreno.liliana@outlook.es</a>
+        </p>
         <section id="objective">
           <p class="bio2">
             Soy una persona responsable, organizada y con capacidad de trabajo en equipo. 
@@ -34,11 +31,20 @@
         <img src="img/imagen.png" alt="Liliana Moreno Bermudez" />
       </div>
     </header>
-
+    <nav class="menu">
+      <div class="menu-icon" id="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="menu-list" >
+          <li><a href="#formacion">Formación</a></li>
+          <li><a href="#competencias">Competencias</a></li>
+          <li><a href="#experiencia">Experiencia Laboral</a></li>
+          <li><a href="#hobbies">Hobbies</a></li>
+          <li><a href="#referencias">Referencias</a></li>
+        </ul>
+    </nav>
     <main>
       <dl>
-        <dt onclick="toggleContent(this)">Formación</dt>
-        <dd class="hidden">
+        <dt id="formacion">Formación</dt>
+        <dd >
           <h2 class="formacion">F.P. Txurdinaga
             <span>Grado Superior - Administración y Finanzas - 2016-2018</span>
           </h2>
@@ -47,8 +53,8 @@
           <p>Comunicación y atención al cliente</p>
         </dd>
 
-        <dt onclick="toggleContent(this)">Competencias</dt>
-        <dd class="hidden">
+        <dt id="competencias">Competencias</dt>
+        <dd >
           <h2>Idiomas</h2>
           <ul>
             <li>Castellano</li>
@@ -63,8 +69,8 @@
             </li>
         </dd>
 
-        <dt onclick="toggleContent(this)">Experiencia laboral</dt>
-        <dd class="hidden">
+        <dt id="experiencia" >Experiencia laboral</dt>
+        <dd >
        
           <h2>
             Batzoki Zornotza
@@ -84,23 +90,39 @@
          
         </dd>
 
-        <dt onclick="toggleContent(this)">Hobbies</dt>
-        <dd class="hidden">
+        <dt id="hobbies" >Hobbies</dt>
+        <dd >
         Senderismo a la montaña, Jugar a pádel, Viajar y conocer nuevas culturas </dd>
-        <dt onclick="toggleContent(this)">Referencias</dt>
-        <dd class="hidden">
-        Disponible bajo solicitud</dd>
+        <dt id="referencias" >Referencias</dt>
+        <dd >
+          <h2>Referencias</h2>
+          <p>Leticia Ivonne - Gerente en Batzoki Zornotza</p>
+          <p>Teléfono: 123456789</p>
+          <p>Email: Leticia@batzoki.com</p>
+        </dd>
       
       </dl>
     </main>
     <footer>
       <p>&copy; 2025 Liliana Moreno Bermudez. Todos los derechos reservados.</p>
-  </footer>
-  <script>
-    function toggleContent(element) {
-      const content = element.nextElementSibling;
-      content.classList.toggle("hidden");
-    }
-  </script>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuIcon = document.getElementById("menu-icon");
+        const menuList = document.getElementById("menu-list");
+
+        // Función para abrir/cerrar menú
+        menuIcon.addEventListener("click", function () {
+          menuList.classList.toggle("show");
+        });
+
+        // Cerrar menú cuando se hace clic en un enlace
+        document.querySelectorAll("#menu-list a").forEach(link => {
+          link.addEventListener("click", function () {
+            menuList.classList.remove("show");
+          });
+        });
+      });
+    </script>
   </body>
 </html>

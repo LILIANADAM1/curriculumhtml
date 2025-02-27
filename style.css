@@ -1,109 +1,231 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
-body {
-  font: 16px Helvetica, Sans-Serif;
-  line-height: 24px;
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 10px;
+header{
+background-color: #000000;
+padding: 20px;
+margin-bottom: 60px;
 }
 
+a[href^="mailto:"] {
+color: orange; 
+text-decoration: none;
+}
 header {
-  background-color: #000;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.nombre{
+  display: inline-block;
+  position: relative;
+  padding-bottom: 5px;
+  color: #ffffff;
 }
 
-.header-content {
-  display: flex;
-  flex-direction: column;
+.nombre::after{
+  content: "";
+  position: absolute;
+  bottom: -15px; 
+  left: 0;
+  width: 120%; 
+  height: 1px; 
+  background-color: white; 
 }
 
-.nombre {
-  font-size: 24px;
+p{
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .bio {
-  font-size: 18px;
+color: #ffffff;
+font-family: Arial, Helvetica, sans-serif;
+margin-top: 20px;
+width: 67%;
+}
+.bio3{
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  width: 67%;
+}
+
+.bio2{
+color: #ffffff;
+font-family: 'Times New Roman', Times, serif;
+width: 67%;
+}
+
+#objective {
+  font-style: italic;
+}
+
+.tel{
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+}
+.pic {
+  width: 200px; 
+  height: 290px; 
+  overflow: hidden; 
+  position: relative;
 }
 
 .pic img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border: 3px solid white;
+  width: 90%;
+  height: 90%;
+  object-fit: cover; 
+  display: block; 
+  border: 5px solid white;
+  border-radius: 10%; 
+
 }
 
-main {
-  margin-top: 20px;
+body {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
+span{
+  font-style: italic;
+  font-size: smaller;
+  font-weight: lighter;
+  color: #999;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 dl {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1rem;
 }
 
-dt {
-  font-size: 18px;
+dt{
+  color: #a36d2e;
+  font-style: italic;
   font-weight: bold;
-  cursor: pointer;
-  background: #a36d2e;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
+  font-size: larger;
+  text-align: end;
+  width: 150px;
 }
 
-dd {
-  padding: 10px;
-  background: #f4f4f4;
-  border-left: 3px solid #a36d2e;
-  display: none;
+dd{
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border-left: 3px solid rgb(255, 156, 42);
+  padding-left: 10px;
 }
 
-.hidden {
+ul{
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+#pic {
+  width: 200px;
+  height: 250px;
+  border: 1px solid #999;
+  padding: 1rem;
+}
+
+h2{
+  color: #a36d2e;
+  margin-bottom: 10px;
+}
+
+.formacion{
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .name{
   display: block;
-}
-
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  text-align: center;
   }
-
-  .pic img {
-    width: 80px;
-    height: 80px;
+  .bio{display: block;}
+  .bio3{display: none;}
+  .bio2{display: none;}
+.pic {
+  width: 100%;
+  height: auto;
+    margin: 10px auto;
+    margin-left: 10px;
   }
-
-  .bio, #objective {
-    display: none;
-  }
-
-  main dl > dd {
-    display: none;
-  }
-
-  main dl > dt {
-    text-align: center;
-    background-color: #a36d2e;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-
-  main dl > dt:hover + dd,
-  main dl > dt:focus + dd {
+  dl {
     display: block;
   }
+  dt {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 10px;
+  }
 }
+/* Estilos del menú */
+.menu-icon {
+font-size: 30px;
+cursor: pointer;
+padding: 10px;
+background-color: #a36d2e;
+color: white;
+text-align: center;
+}
+
+/* Estilos del menú */
+.menu {
+position: relative;
+width: 100%;
+margin-top: -50px;
+background-color: #c77b34; 
+}
+/* Lista del menú */
+#menu-list {
+list-style: none;
+background-color: #000;
+padding: 1px;
+position: absolute;
+top: 50px;
+left: -20px;
+width: 100%;
+display: none;
+z-index: 10; 
+}
+
+#menu-list.show {
+display: block;
+}
+
+/* Estilos de los enlaces */
+#menu-list li {
+padding: 10px;
+border-bottom: 1px solid #444;
+}
+
+#menu-list a {
+text-decoration: none;
+color: white;
+display: block;
+}
+
+#menu-list a:hover {
+background-color: #444;
+}
+/* Media query para ocultar el menú en pantallas grandes */
+@media (min-width: 769px) {
+.menu {
+display: none;
+}
+}
+
+
+
+
+
+
