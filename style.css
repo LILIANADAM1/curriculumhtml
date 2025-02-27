@@ -45,12 +45,14 @@ color: #ffffff;
 font-family: Arial, Helvetica, sans-serif;
 margin-top: 20px;
 width: 67%;
+font-size: 16px;
 }
 .bio3{
   color: #ffffff;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 20px;
   width: 67%;
+  font-size: 16px;
 }
 
 .bio2{
@@ -100,7 +102,10 @@ span{
   font-size: smaller;
   font-weight: lighter;
   color: black;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: bold;
+  
 }
 dl {
   display: grid;
@@ -142,7 +147,8 @@ h2{
 }
 
 .formacion{
-  margin-bottom: 30px;
+  margin-bottom: 10px;
+  
 }
 
 @media (max-width: 768px) {
