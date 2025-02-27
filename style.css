@@ -5,7 +5,7 @@ box-sizing: border-box;
 }
 
 header{
-background-color: #000000;
+background-color: rgb(68, 36, 18);
 padding: 20px;
 margin-bottom: 60px;
 }
@@ -56,7 +56,10 @@ width: 67%;
 .bio2{
 color: #ffffff;
 font-family: 'Times New Roman', Times, serif;
-width: 67%;
+width: 90%;
+font-size: 20px;
+font-family: 'Times New Roman', Times, serif;
+
 }
 
 #objective {
