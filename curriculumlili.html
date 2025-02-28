@@ -46,47 +46,47 @@
   <main>
     <dl>
       <dt id="formacion">Formación</dt>
-      
+
       <dd>
         <h2 class="formacion">CEP Txurdinaga
           <br>
-          <span >Técnico superior Administración y Finanzas 2016-2018</span>
+          <span>Técnico superior Administración y Finanzas 2016-2018</span>
         </h2>
         <p>Contabilidad y fiscalidad</p>
         <p>Finanzas y tesorería</p>
         <p>Comunicación y atención al cliente</p>
-        
-       
+
+
       </dd>
       <dt id="formacion">Formación Complementaria</dt>
-      <dd> 
+      <dd>
         <h2 class="formacion">Centro San Luis
-        <br>
-        <span >Certificado de Profesionalidad: Actividades de venta</span>
-      </h2>
-      <p>Aprendí técnicas de venta y atención al cliente.</p>
-      <p>Desarrollé habilidades en gestión de inventarios y almacén.</p>
-      <p>Realicé prácticas en entornos de venta reales.</p>
+          <br>
+          <span>Certificado de Profesionalidad: Actividades de venta</span>
+        </h2>
+        <p>Aprendí técnicas de venta y atención al cliente.</p>
+        <p>Desarrollé habilidades en gestión de inventarios y almacén.</p>
+        <p>Realicé prácticas en entornos de venta reales.</p>
 
-      <h2 class="formacion">Centro Ipartek Servicios Informáticos
-        <br>
-        <span>HTML 5 y CSS3</span>
-      </h2>
-      <p>Aprendí a estructurar páginas web utilizando HTML5.</p>
-      <p>Diseñé y estilicé sitios web con CSS3, incluyendo el uso de flexbox y grid.</p>
-      <p>Implementé diseños responsivos para mejorar la experiencia del usuario en diferentes dispositivos.</p>
-      
-    
-      <h2 class="formacion">Centro Ipartek  Servicios Informáticos
-        <br>
-        <span>Certificado de Profesionalidad: Operaciones auxiliares de montaje 
-          y mantenimiento de sistemas microinformáticos 290h</span>
-      </h2>
-      <p>Aprendí a instalar y configurar sistemas operativos.</p>
-      <p>Monté y mantuve equipos informáticos.</p>
-      <p>Resolví problemas técnicos y gestioné redes locales.</p>
-      
-    </dd>
+        <h2 class="formacion">Centro Ipartek Servicios Informáticos
+          <br>
+          <span>HTML 5 y CSS3</span>
+        </h2>
+        <p>Aprendí a estructurar páginas web utilizando HTML5.</p>
+        <p>Diseñé y estilicé sitios web con CSS3, incluyendo el uso de flexbox y grid.</p>
+        <p>Implementé diseños responsivos para mejorar la experiencia del usuario en diferentes dispositivos.</p>
+
+
+        <h2 class="formacion">Centro Ipartek Servicios Informáticos
+          <br>
+          <span>Certificado de Profesionalidad: Operaciones auxiliares de montaje
+            y mantenimiento de sistemas microinformáticos 290h</span>
+        </h2>
+        <p>Aprendí a instalar y configurar sistemas operativos.</p>
+        <p>Monté y mantuve equipos informáticos.</p>
+        <p>Resolví problemas técnicos y gestioné redes locales.</p>
+
+      </dd>
       <dt id="competencias">Competencias</dt>
       <dd>
         <h2>Idiomas</h2>
@@ -95,7 +95,7 @@
           <li>Inglés (B1)</li>
           <li>Frances (A1)</li>
         </ul>
-        
+
         <h2>Informáticas</h2>
         <ul>
           <li>HTML5 y CSS3</li>
@@ -103,7 +103,7 @@
           <li>Ofimática (Word, Excel, Power Point)</li>
           <li>Canva (Diseño gráfico y presentaciones)</li>
         </ul>
-           
+
       </dd>
 
       <dt id="experiencia">Experiencia laboral</dt>
@@ -166,24 +166,50 @@
       });
     });
 
+   
+
+    function subirArriba() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Hace que el scroll sea suave
+      });
+    }
+
     window.onscroll = function () {
-  const btn = document.getElementById("btnSubir");
-  if (document.documentElement.scrollTop > 200) {
-    btn.style.display = "block"; // Muestra el botón cuando el usuario baja
-  } else {
-    btn.style.display = "none"; // Oculta el botón si está arriba
-  }
+    const btnSubir = document.getElementById("btnSubir");
+    const btnBajar = document.getElementById("btnBajar");
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = document.documentElement.clientHeight;
+
+    // Calculamos cuando el usuario está en la parte superior e inferior
+    const isTop = scrollTop < 200;
+    const isBottom = scrollTop + clientHeight >= scrollHeight - 200;
+    const isMiddle = !isTop && !isBottom; // Está en el medio cuando no está ni arriba ni abajo
+
+    if (isTop) {
+        btnSubir.style.display = "none";  // Ocultar botón de subir si está arriba
+        btnBajar.style.display = "block"; // Mostrar botón de bajar
+    } else if (isBottom) {
+        btnSubir.style.display = "block"; // Mostrar botón de subir
+        btnBajar.style.display = "block";  // Ocultar botón de bajar
+    } else if (isMiddle) {
+        btnSubir.style.display = "block"; // Mostrar botón de subir
+        btnBajar.style.display = "block"; // Mostrar botón de bajar
+    }
 };
 
-function subirArriba() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth" // Hace que el scroll sea suave
-  });
-}
 
+    function bajarAbajo() {
+      window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: "smooth" // Hace que el scroll sea suave
+      });
+    }
   </script>
   <button id="btnSubir" onclick="subirArriba()">⬆</button>
+  <button id="btnBajar" onclick="bajarAbajo()">⬇</button>
+
 
 </body>
 

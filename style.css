@@ -59,7 +59,6 @@ color: #ffffff;
 font-family: 'Times New Roman', Times, serif;
 width: 90%;
 font-size: 20px;
-font-family: 'Times New Roman', Times, serif;
 text-align: justify;
 }
 
@@ -198,6 +197,27 @@ h2{
   #btnSubir:hover {
     background-color: #0056b3;
   }
+  #btnBajar {
+    position: fixed;
+    bottom: 340px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #e49d1a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Se oculta inicialmente */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+
+  #btnBajar:hover {
+    background-color: #0056b3;
+  }
+ 
 }
 /* Estilos del menú */
 .menu-icon {
@@ -255,8 +275,8 @@ display: none;
 }
 #btnSubir {
   position: fixed;
-  bottom: 400px;
-  right: 550px;
+  bottom: 300px;
+  right: 20px;
   width: 50px;
   height: 50px;
   background-color: #e49d1a;
@@ -271,6 +291,26 @@ display: none;
 }
 
 #btnSubir:hover {
+  background-color: #0056b3;
+}
+#btnBajar {
+  position: fixed;
+  bottom: 200px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #e49d1a;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* Se oculta inicialmente */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+#btnBajar:hover {
   background-color: #0056b3;
 }
 }
