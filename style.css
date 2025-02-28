@@ -239,7 +239,7 @@ background-color: #c77b34;
 /* Lista del menú */
 #menu-list {
 list-style: none;
-background-color: #000;
+background-color: rgb(68, 36, 18);
 padding: 1px;
 position: absolute;
 top: 50px;
