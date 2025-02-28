@@ -8,16 +8,15 @@ header{
 background-color: rgb(68, 36, 18);
 padding: 20px;
 margin-bottom: 60px;
+display: grid;
+grid-template-columns: 1fr auto;
 }
 
 a[href^="mailto:"] {
 color: orange; 
 text-decoration: none;
 }
-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-}
+
 .nombre{
   display: inline-block;
   position: relative;
