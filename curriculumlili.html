@@ -165,7 +165,26 @@
         });
       });
     });
+
+    window.onscroll = function () {
+  const btn = document.getElementById("btnSubir");
+  if (document.documentElement.scrollTop > 200) {
+    btn.style.display = "block"; // Muestra el botón cuando el usuario baja
+  } else {
+    btn.style.display = "none"; // Oculta el botón si está arriba
+  }
+};
+
+function subirArriba() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth" // Hace que el scroll sea suave
+  });
+}
+
   </script>
+  <button id="btnSubir" onclick="subirArriba()">⬆</button>
+
 </body>
 
 </html>
